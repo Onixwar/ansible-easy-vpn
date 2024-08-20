@@ -250,8 +250,8 @@ until [[ "$root_host" =~ ^[a-z0-9\.\-]*$ ]]; do
   read -p "Domain name: " root_host
 done
 
-public_ip=domain_ip
-domain_ip=public_ip
+public_ip=study-vpn.ru
+domain_ip=study-vpn.ru
 
 until [[ $domain_ip =~ $public_ip ]]; do
   echo
@@ -262,8 +262,8 @@ until [[ $domain_ip =~ $public_ip ]]; do
   if [ -z ${root_host} ]; then
     root_host=$root_host_prev
   fi
-  public_ip=domain_ip
-  domain_ip=public_ip
+  public_ip=study-vpn.ru
+  domain_ip=study-vpn.ru
   echo
 done
 
