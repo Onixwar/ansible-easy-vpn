@@ -250,8 +250,8 @@ until [[ "$root_host" =~ ^[a-z0-9\.\-]*$ ]]; do
   read -p "Domain name: " root_host
 done
 
-public_ip=study-vpn.ru
-domain_ip=study-vpn.ru
+public_ip=$(curl -s https://api.ipify.org)
+domain_ip=$(dig +short @1.1.1.1 ${root_host})
 
 until [[ $domain_ip =~ $public_ip ]]; do
   echo
@@ -262,8 +262,8 @@ until [[ $domain_ip =~ $public_ip ]]; do
   if [ -z ${root_host} ]; then
     root_host=$root_host_prev
   fi
-  public_ip=study-vpn.ru
-  domain_ip=study-vpn.ru
+  public_ip=$(curl -s ipinfo.io/ip)
+  domain_ip=$(dig +short @1.1.1.1 ${root_host})
   echo
 done
 
