@@ -8,9 +8,9 @@ all:
       ansible_connection: local
 
   vars:
-    username: notthebee
+    username: onixwar
 
-    root_host: example.duckdns.org
+    root_host: example.microsoft.org
 
     enable_username_creation: yes
 
@@ -30,7 +30,7 @@ all:
 
     wireguard_host: "wg.{{ root_host }}"
 
-    wireguard_subnet: "10.8.0.x"
+    wireguard_subnet: "10.10.0.0/18"
 
     wireguard_client_allowed_ips: "0.0.0.0/0, ::/0"
 
